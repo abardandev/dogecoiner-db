@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+Debug/
+Release/
+*.suo
+*.user
+*.userprefs
+*.pdb
+*.ilk
+packages/
+
+# Database files
+*.mdf
+*.ldf
+*.db
+*.bak
