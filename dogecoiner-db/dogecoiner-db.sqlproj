@@ -57,8 +57,17 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Tables" />
+    <Folder Include="UserDefinedTableTypes" />
+    <Folder Include="SProcs" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\KLines.sql" />
+    <Build Include="UserDefinedTableTypes\KLineKey.sql" />
+    <Build Include="UserDefinedTableTypes\KLineItem.sql" />
+    <Build Include="SProcs\GetKLineKeys.sql" />
+    <Build Include="SProcs\UpsertKLineItems.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="dogecoiner-db.refactorlog" />
   </ItemGroup>
 </Project>

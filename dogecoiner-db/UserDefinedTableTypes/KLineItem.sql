@@ -1,5 +1,6 @@
-﻿CREATE TABLE dbo.KLines (
-    ID BIGINT PRIMARY KEY IDENTITY(1,1),
+﻿CREATE TYPE dbo.KLineItem AS TABLE
+(
+	ID BIGINT NULL,
     Symbol VARCHAR(20) NOT NULL,
     Interval VARCHAR(1) NOT NULL,
     [Timestamp] DATETIME2 NOT NULL,
@@ -9,4 +10,4 @@
     ClosePrice DECIMAL(24, 12) NOT NULL,
     Volume DECIMAL(24, 8) NOT NULL,
     UNIQUE (Symbol, Interval, [Timestamp])
-);
+)

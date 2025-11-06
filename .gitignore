@@ -16,3 +16,5 @@ packages/
 *.ldf
 *.db
 *.bak
+*.dbmdl
+*.jfm
