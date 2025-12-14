@@ -1,7 +1,9 @@
 ﻿CREATE PROCEDURE dbo.UpsertKLineItems
 	@KlineItems KLineItem READONLY
 AS
-
+/*
+MERGEs coin kline data
+*/
 MERGE INTO KLines AS t
 USING @KlineItems AS s
 ON 
