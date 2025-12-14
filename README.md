@@ -1,5 +1,20 @@
 This is the database that stores crypto price history and user portfolios.
 
+## Getting Started
+
+This database was created as a Visual Studio Sql Database Project.
+
+To set it up,
+
+- install Sql Server Express default instance
+- create a new database `dcoinerio`
+- open the Visual Studio solution
+- publish the dogecoiner-db project to your database instance
+
+I prefer database-first DB design. With this approach, schema updates can be published from VS directly or as `dacpac` builds for CI/CD deployment.
+
+## DB Schema
+
 ```mermaid
 ---
 title: DogeCoiner DB Schema
@@ -17,9 +32,9 @@ erDiagram
     }
 ```
 
-# Entity Definition
+### Entity Definitions
 
-## KLines
+#### KLines
 This table contains full historical K-Line data for different assets at multiple timeframes.
 
 ![Image K-Line data](assets/klines-table.png)
