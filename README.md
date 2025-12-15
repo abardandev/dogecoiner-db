@@ -20,19 +20,51 @@ I prefer database-first DB design. With this approach, schema updates can be pub
 title: DogeCoiner DB Schema
 ---
 erDiagram
-    KL[KLines] {
+    direction LR
+    Users {
+        bigint UserId PK
+        string Username
+        bool IsRegistered
+    }
+    Portfolios {
+        bigint PortfolioId PK
+        bigint UserId FK
+        string PortfolioName
+    }
+    Transactions {
+        bigint TransactionId PK
+        bigint PortfolioId FK
         string Symbol
-        string Interval
-        date Timestamp
+        string TransactionType
+        decimal Quantity
+        decimal Price
+        date TimestampUtc
+    }
+    KLines[KLines] {
+        bigint KLineId PK
+        string Symbol UK
+        string Interval UK
+        date Timestamp UK
         decimal OpenPrice
         decimal HighPrice
         decimal LowPrice
         decimal ClosePrice
         decimal Volume
     }
+    Users ||--o{ Portfolios : own
+    Portfolios ||--o{ Transactions : have
 ```
 
 ### Entity Definitions
+
+#### Users
+This table contains users.
+
+#### Portfolios
+This table contains portfolios.
+
+#### Transactions
+This table contains portfolio transactions.
 
 #### KLines
 This table contains full historical K-Line data for different assets at multiple timeframes.

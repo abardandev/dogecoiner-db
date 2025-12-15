@@ -1,0 +1,6 @@
+﻿CREATE TYPE dbo.UsersUdt AS TABLE
+(
+	UserId BIGINT NULL,
+	Username NVARCHAR(150) UNIQUE NOT NULL,
+	IsRegistered BIT NOT NULL
+)

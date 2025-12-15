@@ -62,10 +62,21 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\KLines.sql" />
-    <Build Include="UserDefinedTableTypes\KLineKey.sql" />
-    <Build Include="UserDefinedTableTypes\KLineItem.sql" />
+    <Build Include="UserDefinedTableTypes\KLineKeysUdt.sql" />
+    <Build Include="UserDefinedTableTypes\KLinesUdt.sql" />
     <Build Include="SProcs\GetKLineKeys.sql" />
     <Build Include="SProcs\UpsertKLineItems.sql" />
+    <Build Include="Tables\Users.sql" />
+    <Build Include="Tables\Transactions.sql" />
+    <Build Include="UserDefinedTableTypes\UsersUdt.sql" />
+    <Build Include="UserDefinedTableTypes\TransactionsUdt.sql" />
+    <Build Include="SProcs\UpsertUsers.sql" />
+    <Build Include="SProcs\UpsertTransactions.sql" />
+    <Build Include="SProcs\DeleteTransactions.sql" />
+    <Build Include="UserDefinedTableTypes\IdsUdt.sql" />
+    <Build Include="Tables\Portfolios.sql" />
+    <Build Include="SProcs\UpsertPortfolios.sql" />
+    <Build Include="UserDefinedTableTypes\PortfoliosUdt.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="dogecoiner-db.refactorlog" />

@@ -1,0 +1,4 @@
+﻿CREATE TYPE dbo.IdsUdt AS TABLE
+(
+	Id BIGINT NOT NULL
+)

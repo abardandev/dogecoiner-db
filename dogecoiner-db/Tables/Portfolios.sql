@@ -1,0 +1,9 @@
+﻿CREATE TABLE dbo.Portfolios
+(
+	PortfolioId BIGINT PRIMARY KEY IDENTITY(1,1),
+	UserId BIGINT NOT NULL,
+	PortfolioName NVARCHAR(150) NOT NULL,
+	CreatedUtc DATETIME2 NOT NULL DEFAULT GETUTCDATE(),
+	ModifiedUtc DATETIME2,
+	CONSTRAINT FK_Portfolios_Users FOREIGN KEY (UserId) REFERENCES Users (UserId)
+);

@@ -1,22 +1,22 @@
 ﻿CREATE PROCEDURE dbo.UpsertKLineItems
-	@KlineItems KLineItem READONLY
+	@KlineItems dbo.KLinesUdt READONLY
 AS
 /*
-MERGEs coin kline data
+MERGEs kline data
 */
 MERGE INTO KLines AS t
 USING @KlineItems AS s
 ON 
     s.Symbol = t.Symbol
     AND s.Interval = t.Interval
-    AND s.[Timestamp] = t.[Timestamp]
+    AND s.TimestampUtc = t.TimestampUtc
 
 WHEN NOT MATCHED BY TARGET THEN
 INSERT
 (
     Symbol,
     Interval,
-    [Timestamp],
+    TimestampUtc,
     OpenPrice,
     HighPrice,
     LowPrice,
@@ -27,7 +27,7 @@ VALUES
 (
     s.Symbol,
     s.Interval,
-    s.[Timestamp],
+    s.TimestampUtc,
     s.OpenPrice,
     s.HighPrice,
     s.LowPrice,
@@ -45,9 +45,9 @@ UPDATE SET
 
 OUTPUT 
     $action, 
-    INSERTED.ID, 
+    INSERTED.KLineId, 
     INSERTED.Symbol, 
     INSERTED.Interval, 
-    INSERTED.[Timestamp];
+    INSERTED.TimestampUtc;
 
 RETURN 0
