@@ -1,5 +1,6 @@
 ﻿CREATE TYPE dbo.TransactionsUdt AS TABLE
 (
+	RowId INT NOT NULL,
 	TransactionId BIGINT NULL,
 	PortfolioId BIGINT NOT NULL,
 	Symbol VARCHAR(20) NOT NULL,

@@ -42,12 +42,7 @@ UPDATE SET
 
 OUTPUT 
     $action, 
-    INSERTED.TransactionId, 
-    INSERTED.PortfolioId,
-    INSERTED.Symbol,
-    INSERTED.TransactionType,
-    INSERTED.Quantity,
-    INSERTED.Price,
-    INSERTED.TimestampUtc;
+    s.RowId,
+    INSERTED.TransactionId;
 
 RETURN 0
