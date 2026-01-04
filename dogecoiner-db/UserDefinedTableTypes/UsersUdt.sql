@@ -5,7 +5,6 @@
 	FirstName NVARCHAR(150),
 	LastName NVARCHAR(150),
 	Picture VARCHAR(250),
-	Sub UNIQUEIDENTIFIER NOT NULL,
 	ProviderSub VARCHAR(150),
 	ProviderName VARCHAR(50)
 )

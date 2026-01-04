@@ -16,7 +16,6 @@ INSERT
     FirstName,
     LastName,
     Picture,
-    Sub,
     ProviderSub,
     ProviderName
 )
@@ -26,7 +25,6 @@ VALUES
     s.FirstName,
     s.LastName,
     s.Picture,
-    s.Sub,
     s.ProviderSub,
     s.ProviderName
 )
@@ -37,7 +35,6 @@ UPDATE SET
     t.FirstName = s.FirstName,
     t.LastName = s.LastName,
     t.Picture = s.Picture,
-    t.Sub = s.Sub,
     t.ProviderSub = s.ProviderSub,
     t.ProviderName = s.ProviderName,
     t.ModifiedUtc = GETUTCDATE()
