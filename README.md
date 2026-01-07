@@ -23,8 +23,12 @@ erDiagram
     direction LR
     Users {
         bigint UserId PK
-        string Username
-        bool IsRegistered
+        string Email
+        string FirstName
+        string LastName
+        string Picture
+        string ProviderSub
+        string ProviderName
     }
     Portfolios {
         bigint PortfolioId PK
